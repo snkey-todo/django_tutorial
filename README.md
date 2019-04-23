@@ -1,2 +1,2 @@
 # django_tutorial
-A basic tutorial to study django framework.
+Offical demo to study django framework.
