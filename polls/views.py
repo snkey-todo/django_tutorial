@@ -5,7 +5,9 @@ from django.urls import reverse
 from django.views import generic
 from django.utils import timezone
 from .models import Question,Choice
-
+'''
+传统写法
+'''
 def index(request):
     latest_question_list = Question.objects.order_by('-pub_date')[:5]
     return render(request, 'polls/index.html', {'latest_question_list': latest_question_list})
@@ -33,6 +35,9 @@ def results(request, question_id):
     question = get_object_or_404(Question, pk=question_id)
     return render(request, 'polls/results.html', {'question': question})
 
+'''
+简单的通用写法
+'''
 class IndexView(generic.ListView):
     template_name = 'polls/index.html'
     context_object_name = 'latest_question_list'
@@ -43,7 +48,6 @@ class IndexView(generic.ListView):
 
     def get_queryset(self):
         return Question.objects.filter(pub_date__lte=timezone.now()).order_by('-pub_date')[:5]
-
 
 class DetailView(generic.DetailView):
     model = Question
