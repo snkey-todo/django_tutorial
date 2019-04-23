@@ -96,6 +96,9 @@ python manage.py makemigrations polls
 python manage.py migrate
 ```
 
+- 将db文件map成一个models.py文件
+`python manage.py inspectdb > models.py`
+
 ## 说明
 
 1. 访问一个app的方式,127.0.0.1:8000/polls、 127.0.0.1:8000/admin
