@@ -99,7 +99,9 @@ python manage.py migrate
 ## 说明
 
 1. 访问一个app的方式,127.0.0.1:8000/polls、 127.0.0.1:8000/admin
+
 2. django给我们内置了很多app和功能模块，常用的就是admin，它是一个管理后台app。如果我们想要使用这个app，我们需要创建一个用户即可使用。创建用户的指令`python3 manage.py createsuperuser`.
+
 3. admin app是可以操作数据库的，如果我们想要我们的amdin app可以操作某个app的数据库，我们需要在这个app下的admin.py文件中使用admin进行注册即可。
 ```python
 from  .models import Question, Choice
@@ -108,9 +110,12 @@ admin.site.register(Question)
 admin.site.register(Choice)
 ```
 如果我们想要定义admin对model的操作和显示，我们可以在该文件中进行自定义，可以参考本项目的[admin.py](https://github.com/zhusheng/django_tutorial/blob/master/polls/admin.py)文件。
+
 4. 连接SQLite3数据库。Django内置默认使用的是SQLite3数据库，而且也无需密码，我们可以使用Navicat连接数据库，操作如下：
+
 ![image](https://raw.githubusercontent.com/zhusheng/blog/master/django/01.png)
 ![image](https://raw.githubusercontent.com/zhusheng/blog/master/django/02.png)
+
 5. 修改数据库
 （1）SQLite3（Default）
 ```
